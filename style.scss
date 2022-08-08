@@ -1,0 +1,226 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-icon{
+    height: fit-content;
+    width: fit-content;
+    background: black;
+    padding: 10px;
+    display: none;
+    grid-template-columns: auto;
+    grid-row-gap: 6px;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    top: 16px;
+
+    div{
+        width: 20px;
+        height: 2px;
+        background: white;
+    }
+}
+.nav-icon:hover{
+
+    div{
+        background-color: red;
+    }
+}
+
+.navbar{
+    background: black;
+    height: fit-content;
+    width: 100%;
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: auto 60% auto;
+    grid-column-gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+.logo{
+    color: white;
+    font-weight: bolder;
+    padding-left: 50px;
+}
+.logo::first-letter{
+    color: red;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+.form-btn{
+
+    button{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 35px;
+        background: linear-gradient(orange, red);
+        box-shadow: inset 0px 0px 15px 5px red;
+        border: none;
+        color: white;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+.sample-desc{
+    height: fit-content;
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: justify;
+}
+
+
+
+
+
+@media screen and (max-width: 750px) {
+    .nav-icon{
+        display: grid;
+        position: fixed;
+
+        div:nth-child(1){
+            animation: top 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+        }
+        div:nth-child(2){
+            animation: middle 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+        }
+        div:nth-child(3){
+            animation: bottom 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+        }
+    }
+    @keyframes top {
+        from{
+            top: 10px;
+            transform: rotate(45deg);
+        }to{
+            top: 0px;
+            transform: rotate(0deg);
+        }
+    }
+    @keyframes middle {
+        from{
+            opacity: 0;
+        }to{
+            opacity: 1;
+        }
+    }
+    @keyframes bottom {
+        from{
+            top: -10px;
+            transform: rotate(-45deg);
+        }to{
+            top: 0px;
+            transform: rotate(0deg);
+        }
+    }
+
+    .nav-icon-close{
+        div:nth-child(1){
+            animation: top-close 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+            top: 10px;
+            transform: rotate(45deg);
+        }
+        div:nth-child(2){
+            animation: middle-close 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+            opacity: 0;
+        }
+        div:nth-child(3){
+            animation: bottom-close 0.5s 1;
+            position: relative;
+            transform-origin: 50% 50%;
+            top: -6px;
+            transform: rotate(-45deg);
+        }
+    }
+    @keyframes top-close {
+        from{
+            top: 0px;
+            transform: rotate(0deg);
+        }to{
+            top: 10px;
+            transform: rotate(45deg);
+        }
+    }
+    @keyframes middle-close {
+        from{
+            opacity: 1;
+        }to{
+            opacity: 0;
+        }
+    }
+    @keyframes bottom-close {
+        from{
+            top: 0px;
+            transform: rotate(0deg);
+        }to{
+            top: -6px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .navbar{
+        grid-template-columns: auto auto;
+        background: white;
+        grid-row-gap: 10px;
+        height: 70px;
+    }
+    .logo{
+        color: black;
+    }
+    
+    .nav{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        width: 100%;
+        display: none;
+        grid-template-columns: 100%;
+        grid-row-gap: 30px;
+        background: rgba(0, 0, 0, 0.877);
+        padding: 20px;
+        border-radius: 8px;
+        
+        a{
+            color: black;
+            padding: 10px 20px;
+            background: rgb(245, 245, 245);
+        }
+    }
+    .nav-display{
+        display: grid;
+    }
+    .form-btn{
+
+        button{
+            box-shadow: none;
+            padding: 10px 20px;
+            font-weight: normal;
+            font-size: 8px;
+        }
+    }
+}
