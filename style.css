@@ -321,8 +321,8 @@
 
     .form-btn button {
         box-shadow: none;
-        padding: 10px 20px;
+        padding: 6px 15px;
         font-weight: normal;
-        font-size: 8px
+        font-size: 12px
     }
 }
